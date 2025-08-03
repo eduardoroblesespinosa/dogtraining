@@ -1,0 +1,66 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    font-weight: bold;
+}
+
+.tool-card {
+    border: none;
+    background: #ffffff;
+    padding: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.command-img-main {
+    max-height: 120px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.command-img {
+    max-height: 150px;
+    width: auto;
+    border: 3px solid #dee2e6;
+    background: white;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+    background-color: #0d6efd;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.accordion-button i {
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion-button:not(.collapsed) i {
+    transform: rotate(90deg);
+}
+
+#whistle-button.active {
+    background-color: #dc3545; /* Rojo para indicar que está activo */
+    border-color: #dc3545;
+}
+
+#whistle-visualizer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+    border: 1px solid #dee2e6;
+    max-width: 100%;
+}
+
+footer {
+    font-size: 0.9em;
+}

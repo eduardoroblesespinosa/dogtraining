@@ -1,0 +1,227 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenamiento Canino Interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="dog_icon.png" type="image/png">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="dog_icon.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                Entrenamiento Canino
+            </a>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="p-5 mb-4 bg-light rounded-3 text-center">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Herramienta Anti-Ladrido</h1>
+                <p class="fs-5 text-muted mb-4">Usa este sonido para interrumpir el ladrido excesivo de forma segura.</p>
+                <div class="tool-card card shadow-sm mb-4">
+                    <div class="card-body">
+                         <img src="bark_dog.png" alt="Perro ladrando" class="command-img-main mb-3">
+                         <button id="bark-button" class="btn btn-warning btn-lg rounded-circle" style="width: 100px; height: 100px;">
+                            <i class="bi bi-volume-up-fill" style="font-size: 2.5rem;"></i>
+                        </button>
+                        <div class="mt-4">
+                            <label for="volume-slider" class="form-label">Ajustar Volumen</label>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-volume-mute me-2"></i>
+                                <input type="range" class="form-range w-50" id="volume-slider" min="0" max="1" value="0.5" step="0.01">
+                                <i class="bi bi-volume-up ms-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-info-circle-fill"></i> Uso Responsable</h4>
+                    <p>1. <strong>Calibración:</strong> Empieza con el volumen bajo y súbelo gradualmente hasta que sea suficiente para captar la atención de tu perro sin asustarlo.</p>
+                    <p>2. <strong>Interrupción, no castigo:</strong> Usa el sonido justo cuando el perro empiece a ladrar para interrumpirle. Inmediatamente después, redirige su atención a un comportamiento deseado (ej. un juguete, el comando "sienta").</p>
+                    <p>3. <strong>Refuerzo Positivo:</strong> Cuando deje de ladrar y te preste atención, prémialo con caricias, elogios o una golosina.</p>
+                    <hr>
+                    <p class="mb-0">Nunca uses este sonido para asustar o castigar a tu perro. El objetivo es interrumpir y reeducar.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-5 mb-4 bg-light rounded-3 text-center">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Silbato de Alta Frecuencia</h1>
+                <p class="fs-5 text-muted mb-4">Genera un sonido de alta frecuencia para llamar la atención de tu perro a distancia.</p>
+                <div class="tool-card card shadow-sm mb-4">
+                    <div class="card-body">
+                         <img src="dog_whistle.png" alt="Silbato para perros" class="command-img-main mb-3">
+                         <canvas id="whistle-visualizer" class="mb-4" width="400" height="100"></canvas>
+                         <button id="whistle-button" class="btn btn-info btn-lg">
+                            <i class="bi bi-play-circle-fill me-2"></i> Iniciar Silbato
+                        </button>
+                        <div class="mt-4">
+                            <label for="frequency-slider" class="form-label">Frecuencia: <span id="frequency-display">18000</span> Hz</label>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <span class="me-2 fw-bold">15kHz</span>
+                                <input type="range" class="form-range w-50" id="frequency-slider" min="15000" max="22000" value="18000" step="100">
+                                <span class="ms-2 fw-bold">22kHz</span>
+                            </div>
+                        </div>
+                         <div class="mt-4">
+                            <label for="whistle-volume-slider" class="form-label">Intensidad</label>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-volume-mute me-2"></i>
+                                <input type="range" class="form-range w-50" id="whistle-volume-slider" min="0" max="1" value="0.5" step="0.01">
+                                <i class="bi bi-volume-up ms-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> ¡ADVERTENCIA Y USO RESPONSABLE!</h4>
+                    <p>Esta herramienta está diseñada <strong>únicamente para el entrenamiento de su propio perro</strong> y para captar su atención a distancia. <strong>NO es un arma ni un dispositivo de control de animales.</strong></p>
+                    <ul>
+                        <li><strong>No usar en animales desconocidos, salvajes o agresivos.</strong> Intentar usar esto en un perro agresivo es peligroso y podría empeorar la situación. Si te encuentras con un animal peligroso, contacta a control animal profesional.</li>
+                        <li><strong>Sensibilidad auditiva:</strong> Los perros tienen oídos muy sensibles. Empieza siempre con la intensidad más baja y úsala por periodos muy cortos. Observa la reacción de tu perro. Si muestra signos de miedo o estrés (orejas hacia atrás, cola entre las patas, gemidos), detén el uso inmediatamente.</li>
+                        <li><strong>Efectividad no garantizada:</strong> La capacidad de tu dispositivo (teléfono, ordenador) para emitir estas frecuencias es limitada. La efectividad puede variar o ser nula.</li>
+                        <li><strong>Asociación positiva:</strong> Usa el silbato para llamar la atención y, cuando tu perro responda (ej. mirándote o viniendo hacia ti), prémialo efusivamente para crear una asociación positiva.</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">El uso indebido de esta herramienta es peligroso. Actúa siempre con responsabilidad y prioriza la seguridad y el bienestar animal.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mb-4">Comandos de Obediencia Básica</h2>
+        <div class="accordion" id="obedience-commands">
+            <!-- Sienta -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="bi bi-award-fill me-2"></i> Comando: Sienta
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#obedience-commands">
+                    <div class="accordion-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="sit_dog.png" alt="Perro sentado" class="img-fluid rounded command-img mb-3">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Pasos para enseñar "Sienta":</h5>
+                                <ol>
+                                    <li>Sostén un premio cerca de la nariz de tu perro.</li>
+                                    <li>Mueve tu mano hacia arriba, permitiendo que su cabeza siga el premio y su parte trasera baje.</li>
+                                    <li>Una vez que esté en la posición de sentado, di "Sienta", dale el premio y elógialo.</li>
+                                    <li>Repite varias veces al día en sesiones cortas.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quieto -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                         <i class="bi bi-sign-stop-fill me-2"></i> Comando: Quieto
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#obedience-commands">
+                    <div class="accordion-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="stay_dog.png" alt="Perro quieto" class="img-fluid rounded command-img mb-3">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Pasos para enseñar "Quieto":</h5>
+                                <ol>
+                                    <li>Pídele a tu perro que se siente.</li>
+                                    <li>Abre la palma de tu mano frente a ti y di "Quieto".</li>
+                                    <li>Da un pequeño paso hacia atrás. Si se queda quieto, vuelve a él, dale un premio y elógialo.</li>
+                                    <li>Aumenta gradualmente la distancia y la duración.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Ven -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="bi bi-hearts me-2"></i> Comando: Ven
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#obedience-commands">
+                    <div class="accordion-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="come_dog.png" alt="Perro viniendo" class="img-fluid rounded command-img mb-3">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Pasos para enseñar "Ven":</h5>
+                                <ol>
+                                    <li>Ponte a poca distancia de tu perro.</li>
+                                    <li>Di "Ven" con un tono alegre y dale unas palmaditas en las piernas.</li>
+                                    <li>Cuando venga hacia ti, elógialo con entusiasmo y dale un premio.</li>
+                                    <li>Nunca uses "Ven" para regañarlo, debe ser siempre una experiencia positiva.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Túmbate -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <i class="bi bi-arrow-down-square-fill me-2"></i> Comando: Túmbate
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#obedience-commands">
+                    <div class="accordion-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="down_dog.png" alt="Perro tumbado" class="img-fluid rounded command-img mb-3">
+                            </div>
+                            <div class="col-md-8">
+                                <h5>Pasos para enseñar "Túmbate":</h5>
+                                <ol>
+                                    <li>Con tu perro sentado, sostén un premio cerca de su nariz.</li>
+                                    <li>Baja lentamente tu mano hacia el suelo, guiando su cabeza hacia abajo.</li>
+                                    <li>Su cuerpo debería seguir a su cabeza y tumbarse.</li>
+                                    <li>Cuando esté tumbado, di "Túmbate", dale el premio y elógialo.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Creado para el entrenamiento canino ético y positivo.
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "app/script": "./script.js"
+      }
+    }
+    </script>
+    <script type="module">
+        import 'app/script';
+    </script>
+</body>
+</html>
